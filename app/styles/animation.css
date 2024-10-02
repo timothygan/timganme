@@ -1,0 +1,34 @@
+
+
+.letter-space {
+  letter-spacing: 2px;
+  transition: all .1s ease-in;
+}
+
+.letter-space:hover {
+  letter-spacing: 6px;
+}
+
+.fill {
+  transition: all .1s ease-in;
+}
+
+.fill:hover {
+  background-color: rgba(230, 230, 230, .8);
+}
+
+.logo-enlarge {
+  transition: all .1s ease-in;
+}
+
+.logo-enlarge:hover {
+  font-size: 1.1rem;
+}
+
+.logo:hover {
+  color: rgb(107 114 128);
+}
+
+.nav-button:hover {
+  color: rgb(107 114 128);
+}

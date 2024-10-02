@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.lock-scroll {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.menu-flyout {
+  transform: translateY(-100%);
+  z-index: 1000;
+  position:fixed;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  top: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  transition: .5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+html:before, html:after {
+    content: "";
+    backface-visibility: hidden;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    max-width: 20px;
+    width: 1.5vh;
+    background: white;
+    z-index: 21000;
+}
+
+html:after {
+  right: 0;
+}
+
+body::before, body::after {
+  content: "";
+  backface-visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 1.5vh;
+  max-height: 20px;
+  background: white;
+  z-index: 21000;
+}
+
+body::after {
+  bottom: 0;
+}
+
+.is-open {
+  transform: none;
+}
+
+.base-layer {
+  z-index: 10001;
+  padding: .7rem;
+}
+
+.header-box {
+  z-index: 1001;
+  position: fixed;
+}
+
+.nav-button {
+  z-index: 1000000;
+  justify-content: center;
+  display: flex;
+}
+
+.panels {
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+.panel {
+  margin-left: clamp(1vw, 5vw, 96px);
+  margin-right: clamp(1vw, 5vw, 96px);
+  margin-top: clamp(1vw, 5vw, 48px);
+  font-size: clamp(1vw, 3vw, 56px);
+}
+
+.main-panel {
+  margin-left: clamp(1vw, 5vw, 96px);
+  margin-right: clamp(1vw, 5vw, 96px);
+  line-height: clamp(1.5vw, 15vw, 144px);
+  font-size: clamp(1vw, 10vw, 144px);
+  min-height: clamp(1vw, 30vw, 300px);
+}
+
+.menu-button {
+  transition: all .1s ease-in;
+}
+
+.menu-button-open {
+  transform: translateY(max(-4vw, -24px));
+  transition: all .1s ease-in;
+
+}
+
+.close-button {
+  transform: translateY(0px);
+  transition: all .1s ease-in;
+}
+
+.close-button-open {
+  transform: translateY(max(-4vw, -24px));
+  transition: all .1s ease-in;
+}
+
+.menu-wrap {
+  position: fixed;
+  top: clamp(20px, 5vh, 80px);
+  left: clamp(1vw, 5vw, 96px);
+  max-height: min(4vw, 24px);
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-button {
+  position: fixed;
+  top: clamp(20px, 5vh, 80px);
+  right: clamp(1vw, 5vw, 96px);
+}
+
+.main-nav-button {
+  /* border-left: 1.5px solid rgba(0,0,0,.8); */
+  height: min(4vw, 24px);
+  font-size: min(3vw, 18px);
+}
+
+.main-menu-items {
+  position: fixed;
+  left: clamp(1vw, 5vw, 96px);
+  top: clamp(40px, 10vh, 160px);
+  padding-left: 1rem;
+  padding-right: .4rem;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  font-size: min(3vw, 18px);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
